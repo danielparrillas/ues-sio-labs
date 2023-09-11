@@ -1,0 +1,1 @@
+cmd_/home/daniel/Escritorio/ues/proc/hello.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/daniel/Escritorio/ues/proc/hello.ko /home/daniel/Escritorio/ues/proc/hello.o /home/daniel/Escritorio/ues/proc/hello.mod.o;  true

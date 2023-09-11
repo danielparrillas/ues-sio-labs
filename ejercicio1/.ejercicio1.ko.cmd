@@ -1,0 +1,1 @@
+cmd_/home/daniel/Escritorio/ues/ejercicio1/ejercicio1.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/daniel/Escritorio/ues/ejercicio1/ejercicio1.ko /home/daniel/Escritorio/ues/ejercicio1/ejercicio1.o /home/daniel/Escritorio/ues/ejercicio1/ejercicio1.mod.o;  true
