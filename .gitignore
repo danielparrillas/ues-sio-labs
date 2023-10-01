@@ -1,0 +1,11 @@
+*
+!/**/
+!*.*
+!Makefile
+*.ko
+*.symvers
+*.order
+*.mod.c
+*.o
+*.mod
+*.cmd
