@@ -6,6 +6,7 @@ Laboratorio4<a name="TOP"></a>
 
 Debemos tener instalado los paquetes build-essential y libc6-dev, para instalarlo ejecutamos la siguiente instrucción en consola:
 ```bash
+sudo apt apt-get update
 sudo apt install build-essential libc6-dev
 ```
 Y para compilarlo usaremos la siguiente instrucción:
