@@ -31,5 +31,5 @@ cat /proc/devices
 ```bash
 DEVNUM=`cat /proc/devices | grep Mi-Dispositivo | cut -d' ' -f 1`
 sudo mknod /dev/mydev c $DEVNUM 0
-cat /dev/midev
+cat /dev/mydev
 ```
