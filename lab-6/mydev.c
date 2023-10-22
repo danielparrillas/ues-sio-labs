@@ -23,7 +23,7 @@ static ssize_t device_file_read(
   {
     if (copy_to_user(user_buffer, fortytwo, 1) != 0)
     {
-      return -EFAULT
+      return -EFAULT;
     }
   }
   return count;
