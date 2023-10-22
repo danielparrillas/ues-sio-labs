@@ -25,11 +25,19 @@ sudo insmod program.ko
 cat /proc/devices
 ```
 
-6. Demostración
-> Usamos este identificador para "adjuntar" el controlador a un archivo de dispositivo, mediante el comando mknod. Y luego leeremos ese archivo para mostrar el funcionamiento. Así como se muestra en los comandos de la siguiente imagen
+6. Utilizar `mknod` para crear un nodo de dispositivo en **/dev** con el mismo nombre que especificaste en `device_name`
 
 ```bash
 DEVNUM=`cat /proc/devices | grep Mi-Dispositivo | cut -d' ' -f 1`
 sudo mknod /dev/mydev c $DEVNUM 0
+```
+
+7. Leer desde el dispositivo recién creado
+```bash
 cat /dev/mydev
+```
+
+Resultado (*Se debería ver una cadena de asteriscos*):
+```bash
+***********************************************************************************
 ```
