@@ -5,7 +5,7 @@
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/uaccess.h>
-#include <linux/jiffies.h>
+// #include <linux/jiffies.h>
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Mostrar el tiempo que lleva cargado el manejador de  interrupción cada X tiempo");
