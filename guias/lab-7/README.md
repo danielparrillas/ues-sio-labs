@@ -1,4 +1,4 @@
-1. Identificar el número de interrupción apropiado y adecúe la definición del código fuente `INTERRUPT_ID`
+dm1. Identificar el número de interrupción apropiado y adecúe la definición del código fuente `INTERRUPT_ID`
 
 ```bash
 cat /proc/interrupts
