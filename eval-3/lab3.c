@@ -71,7 +71,7 @@ static int simple_driver_init(void)
 
 static void simple_driver_exit(void)
 {
-  result = 3;
+  int result = 3;
   printk(KERN_INFO "Tiempo total de módulo activo: %lu\n", result);
   unregister_device();
 }
