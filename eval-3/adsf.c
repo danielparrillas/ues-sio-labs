@@ -13,9 +13,8 @@ MODULE_AUTHOR("Brandon Daniel Parrillas Sanchez");
 MODULE_VERSION("PS19005");
 
 static const char *fortytwo = "*";
-// static const int x = 5;
-// static unsigned long jiffies_inicio;
-// static long contador = 0;
+static const int x = 5;
+static unsigned long jiffies_inicio;
 
 static ssize_t device_file_read(
     struct file *file_ptr,
@@ -24,9 +23,15 @@ static ssize_t device_file_read(
     loff_t *position)
 {
   int i = count;
+  unsigned long segundos_transcurridos;
+  // calculo de los segundos
+  unsigned long jiffies_actual = jiffies;
+
+  //calcular la cantidad de segundos transcurridos
+  segundos_transcurridos = (jiffies_actual - jiffies_inicio) / HZ;
   while (i--)
   {
-    if (copy_to_user(user_buffer, fortytwo, 1) != 0)
+    if (copy_to_user(user_buffer, fortytwo, x) != 0)
     {
       return -EFAULT;
     }
@@ -66,13 +71,19 @@ static int simple_driver_init(void)
 {
   printk(KERN_INFO "Mi controlador PS19005 \n");
   int result = register_device();
+  jiffies_inicio = jiffies; 
+	segundos_transcurridos = 0;
   return result;
 }
 
 static void simple_driver_exit(void)
 {
-  int result = 3;
-  printk(KERN_INFO "Tiempo total de módulo activo: %lu\n", result);
+  	// calculo de los segundos
+  unsigned long jiffies_actual = jiffies;
+  unsigned long segundos_transcurridos;
+  //calcular la cantidad de segundos transcurridos
+  segundos_transcurridos = (jiffies_actual - jiffies_inicio) / HZ;
+  printk(KERN_INFO "Tiempo total de módulo activo: %lu\n", segundos_transcurridos);
   unregister_device();
 }
 
